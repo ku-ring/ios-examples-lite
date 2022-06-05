@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A95125A8284C973A0072EB8E /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95125A7284C973A0072EB8E /* FeedbackView.swift */; };
 		A95125AB284CA6770072EB8E /* KuringSDK in Frameworks */ = {isa = PBXBuildFile; productRef = A95125AA284CA6770072EB8E /* KuringSDK */; };
+		A95125AD284CF94F0072EB8E /* KuringLite.docc in Sources */ = {isa = PBXBuildFile; fileRef = A95125AC284CF94F0072EB8E /* KuringLite.docc */; };
 		A983BAC2284BB08F00B96FF1 /* KuringLiteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A983BAC1284BB08F00B96FF1 /* KuringLiteApp.swift */; };
 		A983BAC4284BB08F00B96FF1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A983BAC3284BB08F00B96FF1 /* ContentView.swift */; };
 		A983BAC6284BB08F00B96FF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A983BAC5284BB08F00B96FF1 /* Assets.xcassets */; };
@@ -41,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		A95125A7284C973A0072EB8E /* FeedbackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackView.swift; sourceTree = "<group>"; };
+		A95125AC284CF94F0072EB8E /* KuringLite.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = KuringLite.docc; sourceTree = "<group>"; };
 		A983BABE284BB08F00B96FF1 /* 쿠링 Lite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "쿠링 Lite.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A983BAC1284BB08F00B96FF1 /* KuringLiteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KuringLiteApp.swift; sourceTree = "<group>"; };
 		A983BAC3284BB08F00B96FF1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -85,6 +87,86 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A95125AE284CFF520072EB8E /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				A983BAEA284BCABC00B96FF1 /* NoticeListModel.swift */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
+		A95125AF284CFF610072EB8E /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				A983BAE0284BB7B100B96FF1 /* Subscription.swift */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
+		A95125B0284CFF6F0072EB8E /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				A9F8376E284C87980045FDBD /* SearchEngine.swift */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
+		A95125B1284CFF7B0072EB8E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A983BAD8284BB54600B96FF1 /* NoticeList.swift */,
+				A983BAEC284BCB1F00B96FF1 /* NoticeTypeColumn.swift */,
+				A983BAE8284BC9CF00B96FF1 /* NoticeRow.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A95125B2284CFF8F0072EB8E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A983BADE284BB78700B96FF1 /* SubscriptionView.swift */,
+				A983BAE5284BC16D00B96FF1 /* SubscriptionSelection.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A95125B3284CFF980072EB8E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A983BAD5284BB53800B96FF1 /* SearchView.swift */,
+				A9F83772284C8B730045FDBD /* SearchedResultList.swift */,
+				A9F83774284C8B870045FDBD /* SearchedNoticeRow.swift */,
+				A9F83776284C8B930045FDBD /* SearchedStaffRow.swift */,
+				A9F83770284C881C0045FDBD /* SearchTypeColumn.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A95125B4284D00490072EB8E /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				A9F83781284C96880045FDBD /* FeedbackState.swift */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
+		A95125B5284D00520072EB8E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A95125A7284C973A0072EB8E /* FeedbackView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A95125B6284D008C0072EB8E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A983BADB284BB57B00B96FF1 /* SettingsView.swift */,
+				A9F83778284C93A60045FDBD /* SwiftPackageRow.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		A983BAB5284BB08F00B96FF1 = {
 			isa = PBXGroup;
 			children = (
@@ -108,16 +190,17 @@
 			children = (
 				A983BAC1284BB08F00B96FF1 /* KuringLiteApp.swift */,
 				A983BAC3284BB08F00B96FF1 /* ContentView.swift */,
-				A9F8377F284C96880045FDBD /* Feedback */,
 				A983BADA284BB54A00B96FF1 /* NoticeList */,
 				A983BAE7284BC2ED00B96FF1 /* Subscription */,
 				A983BAD7284BB53C00B96FF1 /* Search */,
 				A983BADD284BB58200B96FF1 /* Settings */,
+				A9F8377F284C96880045FDBD /* Feedback */,
 				A983BAF5284BCC8300B96FF1 /* Commons */,
 				A983BAF8284BCD4100B96FF1 /* Extensions */,
 				A983BAC5284BB08F00B96FF1 /* Assets.xcassets */,
 				A983BAFB284BD10B00B96FF1 /* Launch Screen.storyboard */,
 				A983BAC7284BB08F00B96FF1 /* Preview Content */,
+				A95125AC284CF94F0072EB8E /* KuringLite.docc */,
 			);
 			path = KuringLite;
 			sourceTree = "<group>";
@@ -133,12 +216,8 @@
 		A983BAD7284BB53C00B96FF1 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				A983BAD5284BB53800B96FF1 /* SearchView.swift */,
-				A9F83772284C8B730045FDBD /* SearchedResultList.swift */,
-				A9F83774284C8B870045FDBD /* SearchedNoticeRow.swift */,
-				A9F83776284C8B930045FDBD /* SearchedStaffRow.swift */,
-				A9F83770284C881C0045FDBD /* SearchTypeColumn.swift */,
-				A9F8376E284C87980045FDBD /* SearchEngine.swift */,
+				A95125B0284CFF6F0072EB8E /* DataModel */,
+				A95125B3284CFF980072EB8E /* View */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -146,10 +225,8 @@
 		A983BADA284BB54A00B96FF1 /* NoticeList */ = {
 			isa = PBXGroup;
 			children = (
-				A983BAD8284BB54600B96FF1 /* NoticeList.swift */,
-				A983BAEA284BCABC00B96FF1 /* NoticeListModel.swift */,
-				A983BAEC284BCB1F00B96FF1 /* NoticeTypeColumn.swift */,
-				A983BAE8284BC9CF00B96FF1 /* NoticeRow.swift */,
+				A95125AE284CFF520072EB8E /* DataModel */,
+				A95125B1284CFF7B0072EB8E /* View */,
 			);
 			path = NoticeList;
 			sourceTree = "<group>";
@@ -157,8 +234,7 @@
 		A983BADD284BB58200B96FF1 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				A983BADB284BB57B00B96FF1 /* SettingsView.swift */,
-				A9F83778284C93A60045FDBD /* SwiftPackageRow.swift */,
+				A95125B6284D008C0072EB8E /* View */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -166,9 +242,8 @@
 		A983BAE7284BC2ED00B96FF1 /* Subscription */ = {
 			isa = PBXGroup;
 			children = (
-				A983BADE284BB78700B96FF1 /* SubscriptionView.swift */,
-				A983BAE5284BC16D00B96FF1 /* SubscriptionSelection.swift */,
-				A983BAE0284BB7B100B96FF1 /* Subscription.swift */,
+				A95125AF284CFF610072EB8E /* DataModel */,
+				A95125B2284CFF8F0072EB8E /* View */,
 			);
 			path = Subscription;
 			sourceTree = "<group>";
@@ -201,8 +276,8 @@
 		A9F8377F284C96880045FDBD /* Feedback */ = {
 			isa = PBXGroup;
 			children = (
-				A9F83781284C96880045FDBD /* FeedbackState.swift */,
-				A95125A7284C973A0072EB8E /* FeedbackView.swift */,
+				A95125B4284D00490072EB8E /* DataModel */,
+				A95125B5284D00520072EB8E /* View */,
 			);
 			path = Feedback;
 			sourceTree = "<group>";
@@ -296,6 +371,7 @@
 				A983BAE6284BC16D00B96FF1 /* SubscriptionSelection.swift in Sources */,
 				A983BAFA284BCDB700B96FF1 /* NoticeType.KuringLite.swift in Sources */,
 				A983BAED284BCB1F00B96FF1 /* NoticeTypeColumn.swift in Sources */,
+				A95125AD284CF94F0072EB8E /* KuringLite.docc in Sources */,
 				A983BAC4284BB08F00B96FF1 /* ContentView.swift in Sources */,
 				A983BAE9284BC9CF00B96FF1 /* NoticeRow.swift in Sources */,
 				A9F83773284C8B730045FDBD /* SearchedResultList.swift in Sources */,

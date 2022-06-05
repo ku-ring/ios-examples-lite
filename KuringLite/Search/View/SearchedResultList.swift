@@ -1,5 +1,5 @@
 //
-//  NoticeType.KuringLite.swift
+//  SearchedResultList.swift
 //  KuringLite
 //
 //  Created by Jaesung Lee on 2022/06/05.
@@ -29,10 +29,26 @@
  SOFTWARE.
  */
 
-import KuringSDK
+import SwiftUI
 
-extension NoticeType {
-    var isSubscribed: Bool {
-        Kuring.subscribedCategories.contains(self)
+/// 검색 결과들을 리스트 형태로 보여주는 뷰
+struct SearchedResultList: View {
+    @ObservedObject var engine: SearchEngine
+    
+    var body: some View {
+        LazyVStack(alignment: .leading) {
+            switch engine.currentType {
+            case .notice:
+                ForEach(engine.noticeResult) { notice in
+                    SearchedNoticeRow(notice: notice)
+                }
+            case .staff:
+                ForEach(engine.staffResult, id: \.email) { staff in
+                    SearchedStaffRow(staff: staff)
+                }
+            default:
+                EmptyView()
+            }
+        }
     }
 }

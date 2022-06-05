@@ -1,5 +1,5 @@
 //
-//  NoticeType.KuringLite.swift
+//  SearchedStaffRow.swift
 //  KuringLite
 //
 //  Created by Jaesung Lee on 2022/06/05.
@@ -29,10 +29,25 @@
  SOFTWARE.
  */
 
+import SwiftUI
 import KuringSDK
+import KuringCommons
 
-extension NoticeType {
-    var isSubscribed: Bool {
-        Kuring.subscribedCategories.contains(self)
+/// 검색된 교직원에 대한 주요 정보를 제공하는 아이템 뷰
+struct SearchedStaffRow: View {
+    let staff: Staff
+    
+    var body: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text(staff.name)
+                .font(.subheadline)
+                .foregroundColor(ColorSet.Label.primary.color)
+            
+            Text("\(staff.deptName) · \(staff.collegeName)")
+                .font(.caption)
+                .foregroundColor(ColorSet.Label.secondary.color)
+        }
+        .padding(.vertical, 8)
+        .padding(.horizontal, 20)
     }
 }
