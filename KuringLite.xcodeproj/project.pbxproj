@@ -41,7 +41,7 @@
 
 /* Begin PBXFileReference section */
 		A95125A7284C973A0072EB8E /* FeedbackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackView.swift; sourceTree = "<group>"; };
-		A983BABE284BB08F00B96FF1 /* KuringLite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KuringLite.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A983BABE284BB08F00B96FF1 /* 쿠링 Lite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "쿠링 Lite.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A983BAC1284BB08F00B96FF1 /* KuringLiteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KuringLiteApp.swift; sourceTree = "<group>"; };
 		A983BAC3284BB08F00B96FF1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A983BAC5284BB08F00B96FF1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -98,7 +98,7 @@
 		A983BABF284BB08F00B96FF1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A983BABE284BB08F00B96FF1 /* KuringLite.app */,
+				A983BABE284BB08F00B96FF1 /* 쿠링 Lite.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -230,7 +230,7 @@
 				A95125AA284CA6770072EB8E /* KuringSDK */,
 			);
 			productName = KuringLite;
-			productReference = A983BABE284BB08F00B96FF1 /* KuringLite.app */;
+			productReference = A983BABE284BB08F00B96FF1 /* 쿠링 Lite.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -456,7 +456,7 @@
 				);
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kuring.lite;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "쿠링 Lite";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -486,7 +486,7 @@
 				);
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kuring.lite;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "쿠링 Lite";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -17,7 +17,7 @@ struct ContentView: View {
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     ToolbarItemGroup(placement: .navigationBarLeading) {
-                        Image("app.label.horizontal")
+                        Image("app.icon.label.horizontal")
                     }
                     
                     ToolbarItemGroup(placement: .navigationBarTrailing) {
