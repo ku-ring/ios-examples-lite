@@ -35,6 +35,8 @@ import KuringCommons
 
 /// 쿠링의 검색 관련 데이터를 관리하는 검색엔진 모델
 class SearchEngine: ObservableObject {
+    
+    @Published var inputText: String = ""
     @Published var searchText: String = ""
     
     @Published var currentType: Searcher.SearchType = .notice {
