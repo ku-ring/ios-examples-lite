@@ -13,5 +13,5 @@ class AppStorageManager {
     private init() { }
     
     @AppStorage(StringSet.recentSearch)
-    var recentSearch: [String] = []
+    var recentSearch: [String] = UserDefaults.standard.array(forKey: StringSet.recentSearch) as? [String] ?? []
 }
