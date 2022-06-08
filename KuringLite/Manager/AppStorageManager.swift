@@ -8,10 +8,6 @@
 import SwiftUI
 
 class AppStorageManager {
-    static let shared = AppStorageManager()
-    
-    private init() { }
-    
     @AppStorage(StringSet.recentSearch)
     var recentSearch: [String] = UserDefaults.standard.array(forKey: StringSet.recentSearch) as? [String] ?? []
 }
