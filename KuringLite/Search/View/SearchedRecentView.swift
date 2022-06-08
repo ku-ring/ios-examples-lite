@@ -18,6 +18,7 @@ struct SearchedRecentList: View {
                     
                     HStack(spacing: 5) {
                         Text("\(text)")
+                            .font(.system(size: 16))
                             .foregroundColor(ColorSet.Label.secondary.color)
                             .padding(.leading, 10)
                             .onTapGesture {
@@ -29,6 +30,7 @@ struct SearchedRecentList: View {
                         } label: {
                             Image(systemName: "xmark")
                                 .foregroundColor(ColorSet.secondaryGray.color)
+                                
                         }
 
                     }

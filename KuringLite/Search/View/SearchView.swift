@@ -56,10 +56,13 @@ struct SearchView: View {
                 RoundedRectangle(cornerRadius: 20)
                     .stroke(ColorSet.green.color, lineWidth: 1)
             )
-            .padding(16)
+            .padding([.horizontal, .top], 16)
+            .padding(.bottom, 10)
             
-            SearchedRecentList()
-                .frame(maxWidth: .infinity, minHeight: 30)
+            if !engine.recentText.isEmpty {            
+                SearchedRecentList()
+                    .padding(.bottom, 10)
+            }
             
             ScrollView(showsIndicators: false) {
                 LazyVStack {
