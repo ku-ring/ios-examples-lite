@@ -77,6 +77,7 @@ class SearchEngine: ObservableObject {
     
     func remove(text: String) {
         appStorageManager.recentSearch.removeAll { String($0) == text }
+        inputText = ""
     }
 }
 

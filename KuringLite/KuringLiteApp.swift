@@ -37,6 +37,7 @@ struct KuringLiteApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(AppStorageManager())
                 .accentColor(ColorSet.Label.primary.color)
         }
     }

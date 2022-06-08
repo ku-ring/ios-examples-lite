@@ -12,7 +12,7 @@ struct SearchedRecentList: View {
     @EnvironmentObject private var engine: SearchEngine
     
     var body: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
+        ScrollView(.horizontal, showsIndicators: true) {
             HStack {
                 ForEach(engine.appStorageManager.recentSearch.reversed(), id: \.self) { text in
                     
@@ -26,13 +26,10 @@ struct SearchedRecentList: View {
                             }
                         
                         Button {
-                            // FIXME: 데이터는 지워지나 View가 update되지 않는 현상 발생
-                            // 원인: SearchView에서 바인딩 된 것들이 없어서 업데이트가 진행되지 않았음.
                             engine.remove(text: text)
                         } label: {
                             Image(systemName: "xmark")
                                 .foregroundColor(ColorSet.secondaryGray.color)
-                                
                         }
 
                     }
