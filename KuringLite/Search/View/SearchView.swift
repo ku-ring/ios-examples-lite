@@ -35,7 +35,7 @@ import KuringCommons
 
 /// 검색화면을 나타내는 뷰
 struct SearchView: View {
-    @StateObject private var engine = SearchEngine()
+    @EnvironmentObject var engine: SearchEngine
     
     var body: some View {
         VStack {
@@ -57,7 +57,7 @@ struct SearchView: View {
             )
             .padding(16)
             
-            SearchedRecentList(recentList: $engine.recentText, searchText: $engine.searchText)
+            SearchedRecentList()
                 .frame(maxWidth: .infinity, minHeight: 30)
             
             ScrollView(showsIndicators: false) {
@@ -65,13 +65,12 @@ struct SearchView: View {
                     HStack(spacing: 10) {
                         ForEach(Searcher.SearchType.allCases, id: \.self) {
                             SearchTypeColumn(
-                                engine: engine,
                                 searchType: $0
                             )
                         }
                     }
                     
-                    SearchedResultList(engine: engine)
+                    SearchedResultList()
                 }
             }
         }

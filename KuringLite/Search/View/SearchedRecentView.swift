@@ -9,19 +9,12 @@ import SwiftUI
 import KuringCommons
 
 struct SearchedRecentList: View {
-    
-    @Binding var recentList: [String]
-    @Binding var searchText: String
-    
-    init(recentList: Binding<[String]>, searchText: Binding<String>) {
-        _recentList = recentList
-        _searchText = searchText
-    }
+    @EnvironmentObject private var engine: SearchEngine
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack {
-                ForEach(recentList, id: \.self) { text in
+                ForEach(engine.recentText, id: \.self) { text in
                     
                     HStack(spacing: 5) {
                         Text("\(text)")
@@ -51,7 +44,7 @@ struct SearchedRecentList: View {
     }
     
     private func search(_ text: String) {
-        searchText = text
+        engine.searchText = text
     }
 }
 
