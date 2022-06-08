@@ -32,6 +32,7 @@
 import SwiftUI
 import KuringSDK
 import KuringCommons
+import OrderedCollections
 
 /// 쿠링의 검색 관련 데이터를 관리하는 검색엔진 모델
 class SearchEngine: ObservableObject {

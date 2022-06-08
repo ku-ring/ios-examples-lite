@@ -40,6 +40,9 @@
 		A9F83783284C96880045FDBD /* FeedbackState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F83781284C96880045FDBD /* FeedbackState.swift */; };
 		B11BA8872850742300C82836 /* AppStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11BA8862850742300C82836 /* AppStorageManager.swift */; };
 		B11BA88A285074A900C82836 /* StringSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11BA889285074A900C82836 /* StringSet.swift */; };
+		B11BA88D285085BD00C82836 /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = B11BA88C285085BD00C82836 /* Collections */; };
+		B11BA88F285085BD00C82836 /* DequeModule in Frameworks */ = {isa = PBXBuildFile; productRef = B11BA88E285085BD00C82836 /* DequeModule */; };
+		B11BA891285085BD00C82836 /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = B11BA890285085BD00C82836 /* OrderedCollections */; };
 		B1C641CB284F518500473184 /* SearchedRecentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C641CA284F518500473184 /* SearchedRecentView.swift */; };
 /* End PBXBuildFile section */
 
@@ -85,8 +88,11 @@
 			files = (
 				A983BAD1284BB0C800B96FF1 /* KuringCommons in Frameworks */,
 				A983BAE4284BBDDA00B96FF1 /* Starscream in Frameworks */,
+				B11BA88D285085BD00C82836 /* Collections in Frameworks */,
 				A983BAF2284BCBCC00B96FF1 /* Lottie in Frameworks */,
 				A95125AB284CA6770072EB8E /* KuringSDK in Frameworks */,
+				B11BA891285085BD00C82836 /* OrderedCollections in Frameworks */,
+				B11BA88F285085BD00C82836 /* DequeModule in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +326,9 @@
 				A983BAE3284BBDDA00B96FF1 /* Starscream */,
 				A983BAF1284BCBCC00B96FF1 /* Lottie */,
 				A95125AA284CA6770072EB8E /* KuringSDK */,
+				B11BA88C285085BD00C82836 /* Collections */,
+				B11BA88E285085BD00C82836 /* DequeModule */,
+				B11BA890285085BD00C82836 /* OrderedCollections */,
 			);
 			productName = KuringLite;
 			productReference = A983BABE284BB08F00B96FF1 /* 쿠링 Lite.app */;
@@ -354,6 +363,7 @@
 				A983BAE2284BBDDA00B96FF1 /* XCRemoteSwiftPackageReference "Starscream" */,
 				A983BAF0284BCBCC00B96FF1 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				A95125A9284CA6770072EB8E /* XCRemoteSwiftPackageReference "kuring-sdk-ios-spm" */,
+				B11BA88B285085BD00C82836 /* XCRemoteSwiftPackageReference "swift-collections" */,
 			);
 			productRefGroup = A983BABF284BB08F00B96FF1 /* Products */;
 			projectDirPath = "";
@@ -645,6 +655,14 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		B11BA88B285085BD00C82836 /* XCRemoteSwiftPackageReference "swift-collections" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-collections.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -667,6 +685,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A983BAF0284BCBCC00B96FF1 /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
+		};
+		B11BA88C285085BD00C82836 /* Collections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B11BA88B285085BD00C82836 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = Collections;
+		};
+		B11BA88E285085BD00C82836 /* DequeModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B11BA88B285085BD00C82836 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = DequeModule;
+		};
+		B11BA890285085BD00C82836 /* OrderedCollections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B11BA88B285085BD00C82836 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = OrderedCollections;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
