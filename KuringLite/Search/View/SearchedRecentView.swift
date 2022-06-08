@@ -26,6 +26,7 @@ struct SearchedRecentList: View {
                             }
                         
                         Button {
+                            // FIXME: 데이터는 지워지나 View가 update되지 않는 현상 발생
                             engine.appStorageManager.recentSearch.removeAll { String($0) == text }
                         } label: {
                             Image(systemName: "xmark")
