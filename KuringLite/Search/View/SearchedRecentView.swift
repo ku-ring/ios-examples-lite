@@ -11,8 +11,11 @@ import KuringCommons
 struct SearchedRecentList: View {
     
     @Binding var recentList: [String]
-    init(recentList: Binding<[String]>) {
+    @Binding var searchText: String
+    
+    init(recentList: Binding<[String]>, searchText: Binding<String>) {
         _recentList = recentList
+        _searchText = searchText
     }
     
     var body: some View {
@@ -24,6 +27,9 @@ struct SearchedRecentList: View {
                         Text("\(text)")
                             .foregroundColor(ColorSet.Label.secondary.color)
                             .padding(.leading, 10)
+                            .onTapGesture {
+                                search(text)
+                            }
                         
                         Button {
                             // remove Action
@@ -42,6 +48,10 @@ struct SearchedRecentList: View {
             }
             .padding(.leading, 20)
         }
+    }
+    
+    private func search(_ text: String) {
+        searchText = text
     }
 }
 

@@ -57,7 +57,7 @@ struct SearchView: View {
             )
             .padding(16)
             
-            SearchedRecentList(recentList: $engine.recentText)
+            SearchedRecentList(recentList: $engine.recentText, searchText: $engine.searchText)
                 .frame(maxWidth: .infinity, minHeight: 30)
             
             ScrollView(showsIndicators: false) {
