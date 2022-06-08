@@ -51,6 +51,11 @@
 
 [👉🏼 깃헙 링크 바로가기](https://github.com/KU-Stacks/kuring-ios-commons)
 
+## PR 남기는 방법
+
+현재 저장소를 fork 한 후 작업 내용을 fork 된 저장소에 푸시하고 본래의 저장소(현재 저장소)에 PR 을 생성해주세요,
+
+The process for contributing to a public repository in GitHub starts by forking the repository, then pushing the change onto the forked, then creating a pull request onto the original repository. After that comes the role of the project owner to review and take action (merge/decline) of the requested code change.
 
 ## 이 프로젝트의 개발자
 
