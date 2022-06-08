@@ -52,9 +52,3 @@ struct SearchedRecentList: View {
         engine.inputText = text
     }
 }
-
-//struct SearchedRecentList_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SearchedRecentList()
-//    }
-//}
