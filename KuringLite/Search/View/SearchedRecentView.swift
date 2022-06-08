@@ -44,6 +44,8 @@ struct SearchedRecentList: View {
     }
     
     private func search(_ text: String) {
+        engine.recentText.removeAll { String($0) == text }
+        
         engine.searchText = text
         engine.inputText = text
     }

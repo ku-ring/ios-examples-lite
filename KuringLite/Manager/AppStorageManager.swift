@@ -5,7 +5,6 @@
 //  Created by Hamlit Jason on 2022/06/08.
 //
 
-import Foundation
 import SwiftUI
 
 class AppStorageManager {
