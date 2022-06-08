@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-class AppStorageManager {
+class AppStorageManager: ObservableObject {
     @AppStorage(StringSet.recentSearch)
     var recentSearch: [String] = UserDefaults.standard.array(forKey: StringSet.recentSearch) as? [String] ?? []
 }

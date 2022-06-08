@@ -37,7 +37,6 @@ import KuringCommons
 struct SearchView: View {
     @EnvironmentObject var engine: SearchEngine
     
-    
     var body: some View {
         VStack {
             HStack {
@@ -46,7 +45,7 @@ struct SearchView: View {
                 
                 TextField("", text: $engine.inputText, onCommit: {
                     Logger.debug("🐻 키보드 엔터 입력이 들어왔어요")
-                    engine.recentText.removeAll { $0 == engine.inputText }
+                    engine.appStorageManager.recentSearch.removeAll { $0 == engine.inputText }
                     engine.searchText = engine.inputText
                     
                 })
@@ -60,7 +59,7 @@ struct SearchView: View {
             .padding([.horizontal, .top], 16)
             .padding(.bottom, 10)
             
-            if !engine.recentText.isEmpty {            
+            if !engine.appStorageManager.recentSearch.isEmpty {
                 SearchedRecentList()
                     .padding(.bottom, 10)
             }

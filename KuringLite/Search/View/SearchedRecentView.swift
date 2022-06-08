@@ -14,7 +14,7 @@ struct SearchedRecentList: View {
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack {
-                ForEach(engine.recentText.reversed(), id: \.self) { text in
+                ForEach(engine.appStorageManager.recentSearch.reversed(), id: \.self) { text in
                     
                     HStack(spacing: 5) {
                         Text("\(text)")
@@ -26,7 +26,7 @@ struct SearchedRecentList: View {
                             }
                         
                         Button {
-                            engine.recentText.removeAll { String($0) == text }
+                            engine.appStorageManager.recentSearch.removeAll { String($0) == text }
                         } label: {
                             Image(systemName: "xmark")
                                 .foregroundColor(ColorSet.secondaryGray.color)
@@ -46,7 +46,7 @@ struct SearchedRecentList: View {
     }
     
     private func search(_ text: String) {
-        engine.recentText.removeAll { String($0) == text }
+        engine.appStorageManager.recentSearch.removeAll { String($0) == text }
         
         engine.searchText = text
         engine.inputText = text
