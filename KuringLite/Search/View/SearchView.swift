@@ -45,7 +45,7 @@ struct SearchView: View {
                 
                 TextField("", text: $engine.inputText, onCommit: {
                     Logger.debug("🐻 키보드 엔터 입력이 들어왔어요")
-                    engine.appStorageManager.recentSearch.removeAll { $0 == engine.inputText }
+                    engine.remove(text: engine.inputText)
                     engine.searchText = engine.inputText
                     
                 })

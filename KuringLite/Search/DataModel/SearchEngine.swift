@@ -74,6 +74,10 @@ class SearchEngine: ObservableObject {
         }
         searcher?.search(searchText, forType: currentType)
     }
+    
+    func remove(text: String) {
+        appStorageManager.recentSearch.removeAll { String($0) == text }
+    }
 }
 
 // MARK: SearcherDelegate
