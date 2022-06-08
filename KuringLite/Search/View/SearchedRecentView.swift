@@ -14,7 +14,7 @@ struct SearchedRecentList: View {
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack {
-                ForEach(engine.recentText, id: \.self) { text in
+                ForEach(engine.recentText.reversed(), id: \.self) { text in
                     
                     HStack(spacing: 5) {
                         Text("\(text)")
