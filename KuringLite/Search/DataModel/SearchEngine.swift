@@ -35,9 +35,15 @@ import KuringCommons
 
 /// 쿠링의 검색 관련 데이터를 관리하는 검색엔진 모델
 class SearchEngine: ObservableObject {
+    @Published var recentText: [String] = AppStorageManager.shared.recentSearch
     
     @Published var inputText: String = ""
-    @Published var searchText: String = ""
+    @Published var searchText: String = "" {
+        didSet {
+            recentText.append(searchText)
+            Logger.debug("AppStorage: \(recentText)", action: nil)
+        }
+    }
     
     @Published var currentType: Searcher.SearchType = .notice {
         didSet {

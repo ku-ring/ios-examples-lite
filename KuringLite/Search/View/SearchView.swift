@@ -46,6 +46,7 @@ struct SearchView: View {
                 TextField("", text: $engine.inputText, onCommit: {
                     Logger.debug("🐻 키보드 엔터 입력이 들어왔어요")
                     engine.searchText = engine.inputText
+                    
                 })
             }
             .padding(.horizontal, 20)
@@ -55,6 +56,9 @@ struct SearchView: View {
                     .stroke(ColorSet.green.color, lineWidth: 1)
             )
             .padding(16)
+            
+            SearchedRecentList(recentList: $engine.recentText)
+                .frame(maxWidth: .infinity, minHeight: 30)
             
             ScrollView(showsIndicators: false) {
                 LazyVStack {
