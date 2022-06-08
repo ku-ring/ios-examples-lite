@@ -25,7 +25,7 @@ struct SearchedRecentList: View {
                             }
                         
                         Button {
-                            // remove Action
+                            engine.recentText.removeAll { String($0) == text }
                         } label: {
                             Image(systemName: "xmark")
                                 .foregroundColor(ColorSet.secondaryGray.color)
