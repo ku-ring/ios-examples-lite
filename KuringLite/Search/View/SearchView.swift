@@ -37,6 +37,7 @@ import KuringCommons
 struct SearchView: View {
     @EnvironmentObject var engine: SearchEngine
     
+    
     var body: some View {
         VStack {
             HStack {
