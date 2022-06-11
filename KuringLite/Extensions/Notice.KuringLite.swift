@@ -37,7 +37,7 @@ extension Notice {
     enum NoticeURL {
         case original(_ articleID: String)
         case library(_ articleID: String)
-        
+
         var urlString: String {
             switch self {
             case .original(let articleID):
@@ -47,7 +47,7 @@ extension Notice {
             }
         }
     }
-    
+
     var urlString: String {
         switch category {
         case .도서관 :

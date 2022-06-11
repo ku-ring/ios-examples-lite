@@ -34,7 +34,7 @@ import SwiftUI
 /// 검색 결과들을 리스트 형태로 보여주는 뷰
 struct SearchedResultList: View {
     @ObservedObject var engine: SearchEngine
-    
+
     var body: some View {
         LazyVStack(alignment: .leading) {
             switch engine.currentType {

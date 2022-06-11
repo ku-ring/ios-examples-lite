@@ -35,13 +35,13 @@ import SwiftUI
 struct SubscriptionView: View {
     @Environment(\.presentationMode) var presentationMode
     @StateObject private var subscription = Subscription()
-    
+
     var body: some View {
         NavigationView {
             ZStack(alignment: .top) {
                 Color(red: 61 / 255, green: 189 / 255, blue: 128 / 255)
                     .ignoresSafeArea(.all)
-                
+
                 LazyVStack {
                     Image(systemName: "bell")
                         .resizable()
@@ -49,14 +49,14 @@ struct SubscriptionView: View {
                         .frame(width: 48, height: 48)
                         .clipped()
                         .padding(.bottom, 24)
-                    
+
                     Text("어떤 알림들을 받아보시겠습니까?\n알림 받고 싶은 카테고리를 선택해주세요.")
                         .font(.body.weight(.semibold))
                         .padding(.bottom, 20)
-                    
+
                     SubscriptionSelection(subscription: subscription)
                 }
-                
+
             }
             .foregroundColor(.white)
             .toolbar {
@@ -65,7 +65,7 @@ struct SubscriptionView: View {
                         .font(.body.weight(.semibold))
                         .foregroundColor(.white)
                 }
-                
+
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
                     Button(action: subscription.reset) {
                         Image(systemName: "arrow.uturn.left")
@@ -73,7 +73,7 @@ struct SubscriptionView: View {
                     .foregroundColor(.white)
                     .opacity(subscription.isUpdatable ? 1 : 0.5)
                     .disabled(!subscription.isUpdatable)
-                    
+
                     Button(action: save) {
                         Image(systemName: "checkmark")
                     }
@@ -84,7 +84,7 @@ struct SubscriptionView: View {
             }
         }
     }
-    
+
     func save() {
         subscription.save()
         presentationMode.wrappedValue.dismiss()

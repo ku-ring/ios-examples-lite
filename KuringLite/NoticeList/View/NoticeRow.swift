@@ -36,13 +36,13 @@ import KuringCommons
 /// 하나의 공지사항에 대한 주요 정보를 보여주는 아이템 뷰
 struct NoticeRow: View {
     let notice: Notice
-    
+
     var dateText: String {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy.MM.dd"
         return formatter.string(from: Date(timeIntervalSince1970: notice.postedAt))
     }
-    
+
     var body: some View {
         HStack {
             // MARK: New notice marker
@@ -55,19 +55,19 @@ struct NoticeRow: View {
                     : .clear
                 )
                 .padding(.leading, 8)
-            
+
             VStack(alignment: .leading, spacing: 8) {
                 // MARK: Title
                 Text(notice.subject)
                     .font(.subheadline)
                     .lineLimit(2)
-                
+
                 HStack {
                     // MARK: Date
                     Text(dateText)
                         .foregroundColor(ColorSet.Label.secondary.color)
                         .font(.caption)
-                    
+
                     // MARK: Tag
                     ForEach(notice.tags, id: \.self) {
                         Text($0)
@@ -79,7 +79,7 @@ struct NoticeRow: View {
                                 RoundedRectangle(cornerRadius: 8)
                                     .foregroundColor(ColorSet.secondaryGray.color)
                             )
-                        
+
                     }
                 }
             }

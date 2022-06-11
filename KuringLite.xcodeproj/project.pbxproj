@@ -43,6 +43,7 @@
 /* Begin PBXFileReference section */
 		A95125A7284C973A0072EB8E /* FeedbackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackView.swift; sourceTree = "<group>"; };
 		A95125AC284CF94F0072EB8E /* KuringLite.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = KuringLite.docc; sourceTree = "<group>"; };
+		A95125C22854C2E80072EB8E /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		A983BABE284BB08F00B96FF1 /* 쿠링 Lite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "쿠링 Lite.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A983BAC1284BB08F00B96FF1 /* KuringLiteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KuringLiteApp.swift; sourceTree = "<group>"; };
 		A983BAC3284BB08F00B96FF1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -170,6 +171,7 @@
 		A983BAB5284BB08F00B96FF1 = {
 			isa = PBXGroup;
 			children = (
+				A95125C22854C2E80072EB8E /* .swiftlint.yml */,
 				A983BAFD284BD2B800B96FF1 /* README.md */,
 				A983BAC0284BB08F00B96FF1 /* KuringLite */,
 				A983BABF284BB08F00B96FF1 /* Products */,
@@ -289,6 +291,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A983BACC284BB08F00B96FF1 /* Build configuration list for PBXNativeTarget "KuringLite" */;
 			buildPhases = (
+				A95125C32854C38B0072EB8E /* ShellScript */,
 				A983BABA284BB08F00B96FF1 /* Sources */,
 				A983BABB284BB08F00B96FF1 /* Frameworks */,
 				A983BABC284BB08F00B96FF1 /* Resources */,
@@ -360,6 +363,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A95125C32854C38B0072EB8E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nexport PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint --fix\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A983BABA284BB08F00B96FF1 /* Sources */ = {
@@ -526,6 +549,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -556,6 +580,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
