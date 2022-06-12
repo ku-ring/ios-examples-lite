@@ -9,12 +9,12 @@ import SwiftUI
 import KuringCommons
 
 struct SearchedRecentList: View {
-    @EnvironmentObject private var engine: SearchEngine
+    @EnvironmentObject var engine: SearchEngine
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack {
-                ForEach(engine.recentText.reversed(), id: \.self) { text in
+                ForEach(engine.recentSearch.reversed(), id: \.self) { text in
                     
                     HStack(spacing: 5) {
                         Text("\(text)")
@@ -26,10 +26,10 @@ struct SearchedRecentList: View {
                             }
                         
                         Button {
-                            engine.recentText.removeAll { String($0) == text }
+                            engine.recentSearch.removeAll { String($0) == text }
                         } label: {
                             Image(systemName: "xmark")
-                                .foregroundColor(ColorSet.secondaryGray.color)
+                                .foregroundColor(ColorSet.Label.green.color)
                                 
                         }
 
@@ -45,10 +45,9 @@ struct SearchedRecentList: View {
         }
     }
     
-    private func search(_ text: String) {
-        engine.recentText.removeAll { String($0) == text }
-        
+    func search(_ text: String) {
+        engine.recentSearch.removeAll { $0 == text }
         engine.searchText = text
-        engine.inputText = text
+        engine.recentSearch.append(text)
     }
 }
