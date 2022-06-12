@@ -10,12 +10,13 @@ analyzer_rules:
   
 disabled_rules:
 #  - line_length
-#  - trailing_whitespace
   - vertical_whitespace_opening_braces
   - vertical_whitespace_closing_braces
+  - vertical_whitespace_between_cases
   - void_return
   - file_name
   - number_separator
+  - leading_whitespace
 #  - sorted_imports
   - unneeded_parentheses_in_closure_argument
   - redundant_optional_initialization
@@ -41,6 +42,7 @@ disabled_rules:
   - trailing_comma
   
 opt_in_rules:
+  - force_unwrapping
   - anyobject_protocol
   - array_init
   - attributes
