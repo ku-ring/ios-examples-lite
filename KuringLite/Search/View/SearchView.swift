@@ -35,7 +35,8 @@ import KuringCommons
 
 /// 검색화면을 나타내는 뷰
 struct SearchView: View {
-    @EnvironmentObject var engine: SearchEngine
+    @StateObject private var engine = SearchEngine()
+    
     
     var body: some View {
         VStack {
@@ -43,12 +44,9 @@ struct SearchView: View {
                 Image(systemName: "magnifyingglass")
                     .foregroundColor(ColorSet.green.color)
                 
-                TextField("", text: $engine.inputText, onCommit: {
-                    Logger.debug("🐻 키보드 엔터 입력이 들어왔어요")
-                    engine.remove(text: engine.inputText)
-                    engine.searchText = engine.inputText
+                TextField("검색어를 입력해주세요", text: $engine.searchText)
+                    .onSubmit(engine.search)
                     
-                })
             }
             .padding(.horizontal, 20)
             .frame(height: 40)
@@ -59,9 +57,10 @@ struct SearchView: View {
             .padding([.horizontal, .top], 16)
             .padding(.bottom, 10)
             
-            if !engine.appStorageManager.recentSearch.isEmpty {
+            if !engine.recentSearch.isEmpty {
                 SearchedRecentList()
                     .padding(.bottom, 10)
+                    .environmentObject(engine)
             }
             
             ScrollView(showsIndicators: false) {
@@ -79,9 +78,6 @@ struct SearchView: View {
             }
         }
         .onAppear { engine.start() }
-        .onChange(of: engine.searchText) { newValue in
-            engine.search()
-        }
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .principal) {

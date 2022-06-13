@@ -28,23 +28,16 @@
  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  SOFTWARE.
  */
-
 import SwiftUI
 import KuringSDK
 import KuringCommons
-import OrderedCollections
 
 /// 쿠링의 검색 관련 데이터를 관리하는 검색엔진 모델
 class SearchEngine: ObservableObject {
-    @Published var appStorageManager = AppStorageManager()
+    @AppStorage("com.kuring.lite.recent.search")
+    var recentSearch: [String] = []
     
-    @Published var inputText: String = ""
-    @Published var searchText: String = "" {
-        didSet {
-            appStorageManager.recentSearch.append(searchText)
-            Logger.debug("AppStorage: \(appStorageManager.recentSearch)", action: nil)
-        }
-    }
+    @Published var searchText: String = ""
     
     @Published var currentType: Searcher.SearchType = .notice {
         didSet {
@@ -72,12 +65,10 @@ class SearchEngine: ObservableObject {
         guard !searchText.isEmpty else {
             return resetResult()
         }
+        if !recentSearch.contains(searchText) {
+            recentSearch.append(searchText)
+        }
         searcher?.search(searchText, forType: currentType)
-    }
-    
-    func remove(text: String) {
-        appStorageManager.recentSearch.removeAll { String($0) == text }
-        inputText = ""
     }
 }
 
