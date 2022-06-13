@@ -40,7 +40,6 @@
 		A9F83783284C96880045FDBD /* FeedbackState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F83781284C96880045FDBD /* FeedbackState.swift */; };
 		B11BA88D285085BD00C82836 /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = B11BA88C285085BD00C82836 /* Collections */; };
 		B11BA88F285085BD00C82836 /* DequeModule in Frameworks */ = {isa = PBXBuildFile; productRef = B11BA88E285085BD00C82836 /* DequeModule */; };
-		B11BA891285085BD00C82836 /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = B11BA890285085BD00C82836 /* OrderedCollections */; };
 		B1C641CB284F518500473184 /* SearchedRecentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C641CA284F518500473184 /* SearchedRecentView.swift */; };
 /* End PBXBuildFile section */
 
@@ -87,7 +86,6 @@
 				B11BA88D285085BD00C82836 /* Collections in Frameworks */,
 				A983BAF2284BCBCC00B96FF1 /* Lottie in Frameworks */,
 				A95125AB284CA6770072EB8E /* KuringSDK in Frameworks */,
-				B11BA891285085BD00C82836 /* OrderedCollections in Frameworks */,
 				B11BA88F285085BD00C82836 /* DequeModule in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -314,7 +312,6 @@
 				A95125AA284CA6770072EB8E /* KuringSDK */,
 				B11BA88C285085BD00C82836 /* Collections */,
 				B11BA88E285085BD00C82836 /* DequeModule */,
-				B11BA890285085BD00C82836 /* OrderedCollections */,
 			);
 			productName = KuringLite;
 			productReference = A983BABE284BB08F00B96FF1 /* 쿠링 Lite.app */;
@@ -681,11 +678,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B11BA88B285085BD00C82836 /* XCRemoteSwiftPackageReference "swift-collections" */;
 			productName = DequeModule;
-		};
-		B11BA890285085BD00C82836 /* OrderedCollections */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B11BA88B285085BD00C82836 /* XCRemoteSwiftPackageReference "swift-collections" */;
-			productName = OrderedCollections;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
