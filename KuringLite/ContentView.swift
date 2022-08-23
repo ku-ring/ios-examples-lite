@@ -51,6 +51,7 @@ struct ContentView: View {
                         
                         NavigationLink {
                             SearchView()
+                                .environmentObject(SearchEngine())
                         } label: {
                             Image(systemName: "magnifyingglass")
                         }

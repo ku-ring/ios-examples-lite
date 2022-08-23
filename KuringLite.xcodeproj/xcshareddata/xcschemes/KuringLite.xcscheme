@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A983BABD284BB08F00B96FF1"
-               BuildableName = "KuringLite.app"
+               BuildableName = "&#x110f;&#x116e;&#x1105;&#x1175;&#x11bc; Lite.app"
                BlueprintName = "KuringLite"
                ReferencedContainer = "container:KuringLite.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A983BABD284BB08F00B96FF1"
-            BuildableName = "KuringLite.app"
+            BuildableName = "&#x110f;&#x116e;&#x1105;&#x1175;&#x11bc; Lite.app"
             BlueprintName = "KuringLite"
             ReferencedContainer = "container:KuringLite.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A983BABD284BB08F00B96FF1"
-            BuildableName = "KuringLite.app"
+            BuildableName = "&#x110f;&#x116e;&#x1105;&#x1175;&#x11bc; Lite.app"
             BlueprintName = "KuringLite"
             ReferencedContainer = "container:KuringLite.xcodeproj">
          </BuildableReference>

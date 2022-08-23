@@ -35,7 +35,7 @@ import KuringCommons
 
 /// 검색타입 (공지, 교직원) 에 대하여 하나의 검색타입을 나타내는 뷰
 struct SearchTypeColumn: View {
-    @ObservedObject var engine: SearchEngine
+    @EnvironmentObject var engine: SearchEngine
     let searchType: Searcher.SearchType
     
     var body: some View {

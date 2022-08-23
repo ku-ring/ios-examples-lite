@@ -38,6 +38,9 @@
 		A9F83777284C8B930045FDBD /* SearchedStaffRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F83776284C8B930045FDBD /* SearchedStaffRow.swift */; };
 		A9F83779284C93A60045FDBD /* SwiftPackageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F83778284C93A60045FDBD /* SwiftPackageRow.swift */; };
 		A9F83783284C96880045FDBD /* FeedbackState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F83781284C96880045FDBD /* FeedbackState.swift */; };
+		B11BA88D285085BD00C82836 /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = B11BA88C285085BD00C82836 /* Collections */; };
+		B11BA88F285085BD00C82836 /* DequeModule in Frameworks */ = {isa = PBXBuildFile; productRef = B11BA88E285085BD00C82836 /* DequeModule */; };
+		B1C641CB284F518500473184 /* SearchedRecentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C641CA284F518500473184 /* SearchedRecentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +73,7 @@
 		A9F83776284C8B930045FDBD /* SearchedStaffRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchedStaffRow.swift; sourceTree = "<group>"; };
 		A9F83778284C93A60045FDBD /* SwiftPackageRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftPackageRow.swift; sourceTree = "<group>"; };
 		A9F83781284C96880045FDBD /* FeedbackState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackState.swift; sourceTree = "<group>"; };
+		B1C641CA284F518500473184 /* SearchedRecentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchedRecentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,8 +83,10 @@
 			files = (
 				A983BAD1284BB0C800B96FF1 /* KuringCommons in Frameworks */,
 				A983BAE4284BBDDA00B96FF1 /* Starscream in Frameworks */,
+				B11BA88D285085BD00C82836 /* Collections in Frameworks */,
 				A983BAF2284BCBCC00B96FF1 /* Lottie in Frameworks */,
 				A95125AB284CA6770072EB8E /* KuringSDK in Frameworks */,
+				B11BA88F285085BD00C82836 /* DequeModule in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +144,7 @@
 				A9F83774284C8B870045FDBD /* SearchedNoticeRow.swift */,
 				A9F83776284C8B930045FDBD /* SearchedStaffRow.swift */,
 				A9F83770284C881C0045FDBD /* SearchTypeColumn.swift */,
+				B1C641CA284F518500473184 /* SearchedRecentView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -303,6 +310,8 @@
 				A983BAE3284BBDDA00B96FF1 /* Starscream */,
 				A983BAF1284BCBCC00B96FF1 /* Lottie */,
 				A95125AA284CA6770072EB8E /* KuringSDK */,
+				B11BA88C285085BD00C82836 /* Collections */,
+				B11BA88E285085BD00C82836 /* DequeModule */,
 			);
 			productName = KuringLite;
 			productReference = A983BABE284BB08F00B96FF1 /* 쿠링 Lite.app */;
@@ -337,6 +346,7 @@
 				A983BAE2284BBDDA00B96FF1 /* XCRemoteSwiftPackageReference "Starscream" */,
 				A983BAF0284BCBCC00B96FF1 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				A95125A9284CA6770072EB8E /* XCRemoteSwiftPackageReference "kuring-sdk-ios-spm" */,
+				B11BA88B285085BD00C82836 /* XCRemoteSwiftPackageReference "swift-collections" */,
 			);
 			productRefGroup = A983BABF284BB08F00B96FF1 /* Products */;
 			projectDirPath = "";
@@ -389,6 +399,7 @@
 				A983BADF284BB78700B96FF1 /* SubscriptionView.swift in Sources */,
 				A983BAEF284BCB9B00B96FF1 /* LottieView.swift in Sources */,
 				A9F83775284C8B870045FDBD /* SearchedNoticeRow.swift in Sources */,
+				B1C641CB284F518500473184 /* SearchedRecentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -526,6 +537,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -556,6 +568,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -625,6 +638,14 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		B11BA88B285085BD00C82836 /* XCRemoteSwiftPackageReference "swift-collections" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-collections.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -647,6 +668,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A983BAF0284BCBCC00B96FF1 /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
+		};
+		B11BA88C285085BD00C82836 /* Collections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B11BA88B285085BD00C82836 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = Collections;
+		};
+		B11BA88E285085BD00C82836 /* DequeModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B11BA88B285085BD00C82836 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = DequeModule;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
