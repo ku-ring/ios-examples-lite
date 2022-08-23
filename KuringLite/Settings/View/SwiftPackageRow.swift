@@ -44,6 +44,7 @@ struct SwiftPackage: Identifiable {
         .init(name: "KuringCommons", urlString: "https://github.com/KU-Stacks/kuring-ios-commons", version: "1.0.2"),
         .init(name: "Lottie", urlString: "https://github.com/airbnb/lottie-ios", version: "3.3.0"),
         .init(name: "Starscream", urlString: "https://github.com/daltoniam/Starscream", version: "4.0.4"),
+        .init(name: "swift-collections", urlString: "https://github.com/apple/swift-collections", version: "1.0.2"),
     ]
 }
 
