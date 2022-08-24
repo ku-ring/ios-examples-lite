@@ -31,6 +31,7 @@
 
 import SwiftUI
 import KuringCommons
+//import kuring_campus_map_ios
 
 /// 사용되고 있는 스위프트 패키지들에 대하여 하나의 스위프트 패키지에 대한 정보를 제공하는 아이템 뷰
 struct SwiftPackage: Identifiable {
@@ -45,6 +46,7 @@ struct SwiftPackage: Identifiable {
         .init(name: "Lottie", urlString: "https://github.com/airbnb/lottie-ios", version: "3.3.0"),
         .init(name: "Starscream", urlString: "https://github.com/daltoniam/Starscream", version: "4.0.4"),
         .init(name: "swift-collections", urlString: "https://github.com/apple/swift-collections", version: "1.0.2"),
+        .init(name: "kuring_campus_map_ios", urlString: "https://github.com/KU-Stacks/kuring-campus-map-ios", version: "1.0.3"),
     ]
 }
 

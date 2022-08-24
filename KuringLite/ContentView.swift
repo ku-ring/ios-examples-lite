@@ -45,6 +45,14 @@ struct ContentView: View {
                     }
                     
                     ToolbarItemGroup(placement: .navigationBarTrailing) {
+                        NavigationLink {
+                            CampusMapView()
+                                .ignoresSafeArea(.container, edges: .bottom)
+                                .navigationTitle("Campus Map")
+                        } label: {
+                            Image(systemName: "map")
+                        }
+                        
                         Button(action: { showsSubscriptionView.toggle() }) {
                             Image(systemName: "checklist")
                         }
@@ -66,6 +74,7 @@ struct ContentView: View {
                 .sheet(isPresented: $showsSubscriptionView) {
                     SubscriptionView()
                 }
+                
         }
     }
 }
