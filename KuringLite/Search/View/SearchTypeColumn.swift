@@ -37,7 +37,7 @@ import KuringCommons
 struct SearchTypeColumn: View {
     @ObservedObject var engine: SearchEngine
     let searchType: Searcher.SearchType
-    
+
     var body: some View {
         Text(searchType.koreanValue)
             .font(.subheadline)

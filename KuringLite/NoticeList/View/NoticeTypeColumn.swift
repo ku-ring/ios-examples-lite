@@ -37,7 +37,7 @@ import KuringCommons
 struct NoticeTypeColumn: View {
     @ObservedObject var model: NoticeListModel
     let noticeType: NoticeType
-    
+
     var body: some View {
         Text(noticeType.koreanValue)
             .font(.subheadline)

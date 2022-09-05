@@ -36,13 +36,13 @@ import KuringCommons
 /// 검색화면을 나타내는 뷰
 struct SearchView: View {
     @StateObject private var engine = SearchEngine()
-    
+
     var body: some View {
         VStack {
             HStack {
                 Image(systemName: "magnifyingglass")
                     .foregroundColor(ColorSet.green.color)
-                
+
                 TextField("검색어를 입력해주세요", text: $engine.searchText)
             }
             .padding(.horizontal, 20)
@@ -52,7 +52,7 @@ struct SearchView: View {
                     .stroke(ColorSet.green.color, lineWidth: 1)
             )
             .padding(16)
-            
+
             ScrollView(showsIndicators: false) {
                 LazyVStack {
                     HStack(spacing: 10) {
@@ -63,13 +63,13 @@ struct SearchView: View {
                             )
                         }
                     }
-                    
+
                     SearchedResultList(engine: engine)
                 }
             }
         }
         .onAppear { engine.start() }
-        .onChange(of: engine.searchText) { newValue in
+        .onChange(of: engine.searchText) { _ in
             engine.search()
         }
         .navigationBarTitleDisplayMode(.inline)

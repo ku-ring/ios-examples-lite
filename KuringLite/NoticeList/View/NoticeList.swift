@@ -36,7 +36,7 @@ import KuringCommons
 /// 공지 카테고리와 각 항목별 공지사항들을 보여주는 뷰
 struct NoticeList: View {
     @StateObject private var model = NoticeListModel()
-    
+
     var body: some View {
         VStack {
             ScrollView(.horizontal, showsIndicators: false) {
@@ -51,7 +51,7 @@ struct NoticeList: View {
                 .padding(.leading, 16)
             }
             .frame(height: 48)
-            
+
             ZStack {
                 List {
                     ForEach(model.currentNotices) { notice in
@@ -60,7 +60,7 @@ struct NoticeList: View {
                                 EmptyView()
                             }
                             .opacity(0)
-                            
+
                             NoticeRow(notice: notice)
                         }
                         .onAppear {
@@ -70,10 +70,11 @@ struct NoticeList: View {
                             }
                         }
                     }
+                    .listRowSeparator(.hidden)
                 }
                 .listStyle(.plain)
                 .onAppear { model.load() }
-                
+
                 if model.isLoading {
                     LottieView(filename: "lottieLoading")
                         .frame(width: 100, height: 100, alignment: .center)

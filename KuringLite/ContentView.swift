@@ -34,7 +34,7 @@ import KuringCommons
 
 struct ContentView: View {
     @State private var showsSubscriptionView: Bool = false
-    
+
     var body: some View {
         NavigationView {
             NoticeList()
@@ -43,12 +43,12 @@ struct ContentView: View {
                     ToolbarItemGroup(placement: .navigationBarLeading) {
                         Image("app.icon.label.horizontal")
                     }
-                    
+
                     ToolbarItemGroup(placement: .navigationBarTrailing) {
                         Button(action: { showsSubscriptionView.toggle() }) {
                             Image(systemName: "checklist")
                         }
-                        
+
                         NavigationLink {
                             SearchView()
                         } label: {
