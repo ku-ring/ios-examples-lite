@@ -34,23 +34,23 @@ import SwiftUI
 /// 공지 카테고리들을 선택하는 공간을 나타내는 뷰로 카테고리들이 Grid 형태로 구성된다.
 struct SubscriptionSelection: View {
     @ObservedObject var subscription: Subscription
-    
+
     let columns = [
         GridItem(.adaptive(minimum: 60)),
         GridItem(.adaptive(minimum: 60)),
         GridItem(.adaptive(minimum: 60))
     ]
-    
+
     var body: some View {
         VStack {
             // 카테고리 그룹 버튼
             HStack {
                 Text("대학 공지 카테고리")
                     .font(.subheadline.weight(.semibold))
-                
+
                 Spacer()
             }
-            
+
             // 구독 가능 카테고리 목록
             LazyVGrid(columns: columns) {
                 ForEach(subscription.noticeTypes, id: \.self) { noticeType in

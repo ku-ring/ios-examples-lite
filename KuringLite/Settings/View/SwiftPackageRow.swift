@@ -39,7 +39,7 @@ struct SwiftPackage: Identifiable {
     let name: String
     let urlString: String
     let version: String
-    
+
     static let allUsed: [SwiftPackage] = [
         .init(name: "KuringSDK", urlString: "https://github.com/KU-Stacks/kuring-sdk-ios-spm", version: "1.2.1"),
         .init(name: "KuringCommons", urlString: "https://github.com/KU-Stacks/kuring-ios-commons", version: "1.0.2"),
@@ -50,7 +50,6 @@ struct SwiftPackage: Identifiable {
     ]
 }
 
-
 struct SwiftPackageRow: View {
     let package: SwiftPackage
     var body: some View {
@@ -59,14 +58,14 @@ struct SwiftPackageRow: View {
                 EmptyView()
             }
             .opacity(0)
-            
+
             HStack {
                 Text("🏛 \(package.name)")
                     .font(.subheadline)
                     .foregroundColor(ColorSet.Label.primary.color)
-                
+
                 Spacer()
-                
+
                 Text(package.version)
                     .font(.caption)
                     .foregroundColor(ColorSet.Label.secondary.color)
