@@ -36,7 +36,7 @@ import KuringCommons
 struct SettingsView: View {
     @State private var showsSubscription: Bool = false
     @State private var showsFeedbackView: Bool = false
-    
+
     var body: some View {
         List {
             Section {
@@ -46,7 +46,7 @@ struct SettingsView: View {
                             .font(.subheadline)
 
                         Spacer()
-                        
+
                         Image(systemName: "chevron.right")
                             .foregroundColor(ColorSet.Label.tertiary.color)
                     }
@@ -63,7 +63,7 @@ struct SettingsView: View {
                             .font(.subheadline)
 
                         Spacer()
-                        
+
                         Image(systemName: "chevron.right")
                             .foregroundColor(ColorSet.Label.tertiary.color)
                     }

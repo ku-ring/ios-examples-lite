@@ -36,13 +36,13 @@ import KuringCommons
 /// 검색된 교직원에 대한 주요 정보를 제공하는 아이템 뷰
 struct SearchedStaffRow: View {
     let staff: Staff
-    
+
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             Text(staff.name)
                 .font(.subheadline)
                 .foregroundColor(ColorSet.Label.primary.color)
-            
+
             Text("\(staff.deptName) · \(staff.collegeName)")
                 .font(.caption)
                 .foregroundColor(ColorSet.Label.secondary.color)

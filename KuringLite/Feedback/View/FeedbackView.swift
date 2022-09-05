@@ -36,13 +36,13 @@ import KuringCommons
 struct FeedbackView: View {
     @Environment(\.presentationMode) var presentationMode
     @StateObject private var stateModel = FeedbackState()
-    
+
     var body: some View {
         NavigationView {
             ZStack {
                 ColorSet.Background.primary.color
                     .edgesIgnoringSafeArea(.all)
-                
+
                 VStack {
                     Text("피드백을 남겨서 앱이 성장 하는데에\n큰 기여를 해주세요 🙂")
                         .foregroundColor(ColorSet.Label.primary.color)
@@ -50,7 +50,7 @@ struct FeedbackView: View {
                         .multilineTextAlignment(.center)
                         .padding(.top, 24)
                         .padding(.bottom, 32)
-                    
+
                     TextEditor(text: $stateModel.feedback)
                         .foregroundColor(stateModel.textEditorColor)
                         .font(.footnote)
@@ -61,22 +61,22 @@ struct FeedbackView: View {
                                 .stroke(ColorSet.green.color, lineWidth: 1)
                                 .foregroundColor(.clear)
                                 .frame(maxHeight: 180)
-                            
+
                         )
                         .onTapGesture {
                             stateModel.startEditing()
                         }
-                    
+
                     HStack {
                         Spacer()
-                        
+
                         Text(stateModel.textLimitGuide)
                             .font(.caption)
                             .foregroundColor(stateModel.textLimitColor)
                     }
-                    
+
                     .padding(.bottom, 24)
-                    
+
                     Button(action: send) {
                         Text("피드백 보내기")
                             .foregroundColor(ColorSet.Background.primary.color)
@@ -91,7 +91,7 @@ struct FeedbackView: View {
                     }
                     .opacity(stateModel.isSendable ? 1.0 : 0.5)
                     .disabled(!stateModel.isSendable)
-                    
+
                     Spacer()
                 }
                 .padding(.horizontal, 16)
@@ -104,17 +104,17 @@ struct FeedbackView: View {
             }
         }
     }
-    
+
     init() {
         UITextView.appearance().backgroundColor = .clear
     }
-    
+
     func send() {
         stateModel.send {
             presentationMode.wrappedValue.dismiss()
         }
     }
-    
+
     func hideKeyboard() {
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }

@@ -37,13 +37,12 @@ import KuringCommons
 struct SearchView: View {
     @StateObject private var engine = SearchEngine()
     
-    
     var body: some View {
         VStack {
             HStack {
                 Image(systemName: "magnifyingglass")
                     .foregroundColor(ColorSet.green.color)
-                
+
                 TextField("검색어를 입력해주세요", text: $engine.searchText)
                     .onSubmit(engine.search)
                     
