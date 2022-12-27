@@ -11,7 +11,7 @@
 
 <img src="https://user-images.githubusercontent.com/53814741/172047890-c135e050-7b5c-4478-9b8b-fda8b838634b.png" width="30%"/>
 
-쿠링 Lite 는 모두가 자유롭게 쿠링 기능을 체험하고 기능 개발에 참여해볼 수 있는 오픈 프로젝트 입니다.
+쿠링 Lite 는 모두가 자유롭게 쿠링 기능을 체험하고 기능 개발에 참여해볼 수 있는 오픈 프로젝트 입니다. [🔗 필독링크](https://github.com/KU-Stacks/kuring-lite-ios/discussions)
 
 ## 개요
 
