@@ -17,6 +17,16 @@
 
 쿠링 Lite 는 실제 서비스 되고 있는 **쿠링 - 건국대학교 공지앱** 의 주요 기능 일부만을 모아둔 오픈된 앱 프로젝트 입니다. 모두가 소스코드를 확인할 수 있으며, Xcode 및 연결된 실제 디바이스에서 앱을 구동시켜볼 수 있습니다.
 
+### PR 남기는 방법
+
+현재 저장소를 fork 한 후 작업 내용을 fork 된 저장소에 푸시하고 본래의 저장소(현재 저장소)에 PR 을 생성해주세요,
+
+The process for contributing to a public repository in GitHub starts by forking the repository, then pushing the change onto the forked, then creating a pull request onto the original repository. After that comes the role of the project owner to review and take action (merge/decline) of the requested code change.
+
+### 이 프로젝트의 개발자
+
+이 오픈 프로젝트는 쿠링 iOS 팀에 의해 운영관리 됩니다.
+
 ### 개발환경
 
 앱 프로젝트의 개발환경은 다음과 같습니다. 
@@ -43,9 +53,52 @@
 >
 > [👉🏼 깃헙 링크 바로가기](https://github.com/KU-Stacks/kuring-ios-commons)
 
-### 기능
+## 프로젝트 구성
 
-앱 프로젝트에서 제공하는 기능은 다음과 같습니다.
+프로젝트 파일들은 아래 경로와 같이 구성되어 있습니다.
+
+* KuringLite (프로젝트 상위폴더)
+  * KuringLiteApp.swift
+  * ContentView.swift
+  * 📁 기능1
+    * 기능1을 위한 뷰1
+    * 기능1을 위한 뷰2
+    * 기능1을 위한 데이터모델1
+  * 📁 기능2
+    * 기능2을 위한 뷰1
+    * 기능2을 위한 뷰2
+    * 기능2을 위한 데이터모델1
+  * 🏞 Assets
+
+프로젝트는 Apple의 SwiftUI 기반이며 Apple 의 SwiftUI 공식 문서 가이드에 따라 각 기능들은 아래와 같은 공통적인 구조로 구성되었습니다.
+- **View(뷰)** 
+  
+  실제 UI에 대한 묘사를 담고 있는 구성요소 입니다. `View` 프로토콜을 상속합니다.
+
+  ```swift
+  struct NoticeList: View {
+      var body: some View { ... }
+  }
+  ```
+
+
+- **[DataModel(데이터모델)](https://developer.apple.com/documentation/swiftui/managing-model-data-in-your-app)** 
+  
+  뷰에서 사용되는 데이터들을 관리하기 위한 데이터모델입니다. `ObservableObject` 프로토콜을 상속하며 `@StateObject`, `@ObservedObject`, `@EnvironmentObject` 와 같은 속성과 함께 사용하여 뷰를 위한 데이터를 관리합니다.
+
+  ```swift
+  class NoticeListModel: ObservableObject { ... }
+
+  struct NoticeList: View {
+      @StateObject private var model = NoticeListModel()
+  }
+  ```
+
+## 기능
+
+쿠링 Lite가 제공하는 주요 기능은 다음과 같습니다.
+
+> **참고** 이 항목은 쿠링 Lite 1.0.0 버전 기준으로 작성되었습니다. 1.0.0 이후의 변경사항들은 [Release Note](https://github.com/KU-Stacks/kuring-lite-ios/releases)를 확인해주세요.
 
 - 공지 카테고리 목록
 - 공지 리스트 가져오기
@@ -53,120 +106,80 @@
 - 공지 / 교직원 검색하기
 - 피드백 전송하기
 
+### 공지사항 목록
+
+`NoticeList` 는 공지사항 목록을 나타내는 **뷰** 이며 `NoticeTypeColumn` 과 `NoticeRow` 로 구성되어 있습니다. 그리고 `NoticeListModel` 이라는 데이터모델이 API 통신을 통해 공지사항 데이터들을 관리합니다. 
+
+### 용어 정리
+
+**Notice**
+
+공지사항 그 자체를 의미 합니다. 
+
+| 프로퍼티 | 용도 |
+| --- | --- |
+| `articleID` | 공지사항 고유번호로 URL 주소에 쓰입니다. 또한 공지사항들 간의 식별자로 사용됩니다 |
+| `subject` | 공지사항 제목 |
+| `category` | 공지 카테고리 |
+| `urlString` | URL 주소 값 |
+| `postedAt` | 공지 게시시간 정보. 1970년 1월 1일 기준 값 |
+| `tags` | 공지 제목에서 추출한 태그 값들 |
+| `isNew` | 마지막 접속 이후 새로 올라온 공지인지 여부 |
+| `isRead` | 공지를 읽었는지 여부 |
+| `isSubscribed` | 구독한 카테고리에 속하는 공지인지 여부 |
+
+**NoticeType**
+
+학사, 국제, 장학, 취창업 등 공지사항의 카테고리 항목을 의미합니다. 공지사항의 타입임을 나타내기 위해 사용된 네이밍 입니다.
+
+> **🙋 질문: 왜 Category 라는 네이밍을 쓰지 않나요?** 이미 애플이 쓰고 있어요... [ Developer Documentation](https://developer.apple.com/documentation/objectivec/category)
+
+NoticeType 객체들은 각각의 한글명을 나타내는 `.koreanValue` 라는 프로퍼티를 갖고 있습니다.
+
+### NoticeList
+
+<img width="393" alt="Screen Shot 2022-06-05 at 11 24 36 PM" src="https://user-images.githubusercontent.com/53814741/172055311-9d77fcb5-49a7-43f3-8eb1-e6122a5ca9f1.png">
+
+카테고리별 공지사항 목록을 보여주는 뷰 입니다.
+
+```swift
+struct NoticeList: View {
+    @StateObject var model = NoticeListModel()
+
+    var body: some View {
+        VStack {
+            // 공지 카테고리
+            ScrollView {
+                LazyHStack {
+                    ForEach { NoticeTypeColumn(...) }
+                }
+            }
+
+            // 공지 리스트
+            List {
+                ForEach { NoticeRow(...) }
+            }    
+        }
+    }
+}
+```
+
+### NoticeTypeColumn
+
+<img width="352" alt="Screen Shot 2022-06-05 at 11 25 12 PM" src="https://user-images.githubusercontent.com/53814741/172055334-012744f1-a819-4051-bbd6-95611fc20717.png">
+
+하나의 공지사항 카테고리 항목 (`NoticeType`)을 나타내는 아이템 뷰입니다.
+
+### NoticeRow
+
+<img width="370" alt="Screen Shot 2022-06-05 at 11 25 31 PM" src="https://user-images.githubusercontent.com/53814741/172055347-a0838a09-09fd-45fb-aa78-b93225657b4c.png">
+
+공지사항 목록을 구성하는 각각의 아이템 뷰로, 하나의 공지사항에 대한 주요 정보를 제공합니다.
+
+
 ## 코드 스타일 가이드 | The Style Guidelines
 
 모두가 다같이 참여할 수 있는 오픈 소스 프로젝트이기 때문에 가독성과 코드 이해도를 높이기 위해 다음의 스타일가이드에 따라서 코드를 작성해주세요.
 
-[👉🏼 쿠링iOS 스타일가이드: 노션페이지에서 확인하기](https://www.notion.so/kuring/iOS-273caae65c484d6794481d5fb5a96d1d)
+[👉🏼 쿠링iOS 스타일가이드](https://github.com/KU-Stacks/kuring-lite-ios/wiki/%EC%BF%A0%EB%A7%81-iOS-%EC%8A%A4%ED%83%80%EC%9D%BC-%EA%B0%80%EC%9D%B4%EB%93%9C)
 
-### 쿠링 iOS 스위프트 스타일 가이드 | Kuring iOS Swift Style Guidelines
-
-- **라인수는 최대 100줄을 넘기지 않습니다.**
-    
-    > **왜?** 100줄이 넘어가면 가독성이 떨어집니다. 
-    
-    Xcode 👉🏻 Preferences 👉🏻 Text Editing 👉🏻 ✅ Page guide at column: 100
-    
-- **파일의 코드 수는 최대 300줄을 넘기지 않습니다.**
-    
-    기능에 따라 extension으로 나눠서 파일을 분리하도록 합니다.
-    
-- **파일명은 클래스 이름을 사용하고, extension의 경우 `*.SearcherDelegate.swift` 와 같이 기능을 명시합니다.**
-    
-    예) `SearchEngine.SearcherDelegate.swift`
-    
-- **프레임워크의 클래스에 extension을 넣는 경우 `*.KuringLite.swift` 와 같이 프로젝트명을 명시합니다**
-    
-    예) `View.KuringLite.swift`
-    
-
-#### 네이밍
-
-- **1글자 네이밍 또는 약어만 사용하지 않습니다**
-    
-    ```swift
-    // ⛔️ 이렇게 하면 안돼요!
-    let btn = UIButton()
-    
-    // ✅ 이렇게 해주세요!
-    let button = UIButton()
-    let saveButton = UIButton()
-    ```
-    
-    ```swift
-    
-    Kuring.someAsyncMethod(parameter1) { error in 
-        // ⛔️ 이렇게 하면 안돼요!
-        if let e = error { ... }
-    
-        // ✅ 이렇게 해주세요!
-        if let error = error { ... }
-    }
-    ```
-    
-- **PascalCase(대문자로 시작)하는 경우는 오직 프로토콜, 타입(클래스, 구조체) 에서만 가능합니다. 그 외의 경우는 lowerCamelCase를 사용합니다.**
-    
-    ```swift
-    protocol SomeDelegate: AnyObject {
-        func someMethod(_ param: Type)
-    }
-    ```
-    
-- **약어의 경우 앞에 오는 경우를 제외하고 전부 대문자로 작성합니다.**
-    
-    ```swift
-    // ⛔️ 이렇게 하면 안돼요!
-    let httpUrl = URL(string: "https://")
-    
-    // ✅ 이렇게 해주세요!
-    let httpURL = URL(string: "https://")
-    let urlString = "https://"
-    ```
-    
-- **Bool 타입은 `is + 형용사` 또는 `3인칭단수형` 동사를 사용합니다**
-    
-    다른 타입과 헷갈리지 않게 Boolean 타입임을 확실히 명시합니다.
-    
-    예) `isConnected`, `hasMember`, `showsNotice`
-    
-- **타입에 대한 힌트를 이름에 넣어야 합니다.**
-    
-    이름만 보고 어떤 역할을 하는지 짐작할 수 있도록 하여 가독성을 높일 수 있습니다.
-    
-    ```swift
-    var saveButton: UIButton!
-    var feedbackTextView: UITextView!
-    var titleLabel: UILabel!
-    
-    struct SearchView: View { ... }
-    ```
-    
-    **뷰에 대한 네이밍 시** 역할에 따라 다음의 네이밍 규칙을 **반드시** 준수해야합니다.
-    
-    ```swift
-    // 리스트를 담당하는 뷰의 경우 `List` 명시
-    struct NoticeList: View { ... }
-    
-    // 리스트의 아이템을 나타는 뷰의 경우 `Row` 명시
-    struct NoticeRow: View { ... }
-    
-    // 좌우 스크롤 리스트의 아이템을 나타내는 뷰의 경우 `Column` 명시
-    struct NoticeTypeColumn: View { ... }
-    
-    // 선택하는 아이템들의 집합을 나타내는 뷰의 경우 `Selection` 또는 `Selector` 명시
-    struct SubscriptionSelection: View { ... }
-    
-    // 일반 뷰의 경우 `View` 명시
-    struct FeedbackView: View { ... }
-    ```
-
-
-## PR 남기는 방법
-
-현재 저장소를 fork 한 후 작업 내용을 fork 된 저장소에 푸시하고 본래의 저장소(현재 저장소)에 PR 을 생성해주세요,
-
-The process for contributing to a public repository in GitHub starts by forking the repository, then pushing the change onto the forked, then creating a pull request onto the original repository. After that comes the role of the project owner to review and take action (merge/decline) of the requested code change.
-
-## 이 프로젝트의 개발자
-
-이 오픈 프로젝트는 쿠링 iOS 팀에 의해 운영관리 됩니다.
